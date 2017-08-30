@@ -8,11 +8,12 @@ RSpec.describe "as a user" do
       click_on "Locate"
 
       expect(current_path).to eq("/search")
-      # expect(params[:q]).to eq("80203")
+      expect(page).to have_content("Wells Fargo Center")
+      expect(page).to have_content("Denver")
+      expect(page).to have_content("CO")
+      expect(page).to have_content("1700 Sherman Street")
+      expect(page).to have_content("80203")
+      expect(page).to have_content("MO: 12:00am-12:00am; TU: 12:00am-12:00am; WE: 12:00am-12:00am; TH: 12:00am-12:00am; FR: 12:00am-12:00am; SA: 12:00am-12:00am; SU: 12:00am-12:00am")
     end
   end
 end
-
-# Then I should see a list of the 10 closest stations within 6 miles sorted by distance
-# And the stations should be limited to Electric and Propane
-# And for each of the stations I should see Name, Address, Fuel Types, Distance, and Access Times

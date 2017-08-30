@@ -1,6 +1,6 @@
 class Station
   attr_reader :name,
-              :phone,
+              :fuel_types,
               :street_address,
               :city,
               :state,
@@ -9,7 +9,7 @@ class Station
 
   def initialize(params)
     @name = params["station_name"]
-    @phone = params["phone"]
+    @fuel_types = params["fuel_type_code"]
     @street_address = params["street_address"]
     @city = params["city"]
     @state = params["state"]
