@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe "as a user" do
   scenario "can search by zip code" do
     visit root_path
-    fill_in 'search', with: "80203"
-    click_on "locate"
+    fill_in 'q', with: "80203"
+    click_on "Locate"
 
     expect(current_path).to eq("/search?zip_code=80203")
   end
