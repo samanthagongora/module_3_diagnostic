@@ -6,7 +6,8 @@ RSpec.describe "as a user" do
     fill_in 'q', with: "80203"
     click_on "Locate"
 
-    expect(current_path).to eq("/search?zip_code=80203")
+    expect(current_path).to eq("/search")
+    # expect(params[:q]).to eq("80203")
   end
 end
 
