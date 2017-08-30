@@ -2,12 +2,14 @@ require 'rails_helper'
 
 RSpec.describe "as a user" do
   scenario "can search by zip code" do
-    visit root_path
-    fill_in 'q', with: "80203"
-    click_on "Locate"
+    VCR.use_cassette("/user_can_search_by_zip_code_spec") do
+      visit root_path
+      fill_in 'q', with: "80203"
+      click_on "Locate"
 
-    expect(current_path).to eq("/search")
-    # expect(params[:q]).to eq("80203")
+      expect(current_path).to eq("/search")
+      # expect(params[:q]).to eq("80203")
+    end
   end
 end
 
