@@ -1,2 +1,9 @@
 <% @stations.each do |station| %>
+  <div class="container">
+    <%= station.name %>
+    <%= station.phone %>
+    <%= station.street_address %>
+    <%= station.city %>, <%= station.state station.zip %>
+    <%= station.access_day_and_time %>
+  </div>
 <% end %>
