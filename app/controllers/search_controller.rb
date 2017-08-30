@@ -5,8 +5,8 @@ class SearchController < ApplicationController
       faraday.adapter  Faraday.default_adapter
     end
 
-    response = conn.get "/nrel/alt-fuel-stations/v1.json", { :limit => '10', :api_key => "#{ENV['nrel_key']}" }
-
+    response = conn.get "/nrel/alt-fuel-stations/v1.json", { :api_key => "#{ENV['nrel_key']}", :zip => "#{zip_code}", :radius => "6.0", :fuel_type => "ELEC, LNG", :limit => '10' }
+byebug
     @stations = JSON.parse(response.body)
   end
 end
