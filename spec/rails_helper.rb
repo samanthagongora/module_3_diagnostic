@@ -5,13 +5,13 @@ require File.expand_path('../../config/environment', __FILE__)
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
-require 'webmock/rspec'
-require 'vcr'
-
-VCR.configure do |config|
-  config.cassette_library_dir = "spec/cassettes"
-  config.hook_into :webmock
-end
+# require 'webmock/rspec'
+# require 'vcr'
+#
+# VCR.configure do |config|
+#   config.cassette_library_dir = "spec/cassettes"
+#   config.hook_into :webmock
+# end
 
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
