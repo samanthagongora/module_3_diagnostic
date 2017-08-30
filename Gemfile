@@ -17,6 +17,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'capybara', '~> 2.13'
   gem 'factory_girl_rails'
+  gem 'awesome_print'
 end
 
 group :test do
